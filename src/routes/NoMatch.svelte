@@ -1,7 +1,10 @@
 <script lang="js">
-    import NoMatch from "../elements/NoMatch.svelte";
+    import Header from "../elements/Header.svelte";
+
+    import { Home } from "../elements/home";
 </script>
 
 <!-- NoMatch -->
-    <NoMatch />
+    <Header />
+    <Home noMatch={true} />
 <!-- NoMatch end -->

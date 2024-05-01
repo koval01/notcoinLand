@@ -1,4 +1,4 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import { defineConfig } from 'vite'
 
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { VitePWA } from 'vite-plugin-pwa';
@@ -6,7 +6,6 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
     plugins: [
         svelte(),
-        splitVendorChunkPlugin(),
         VitePWA({
             registerType: 'autoUpdate',
             injectRegister: 'inline',
@@ -29,22 +28,6 @@ export default defineConfig({
                         "src": "/icons/android-chrome-512x512.png?v=1",
                         "sizes": "512x512",
                         "type": "image/png"
-                    }
-                ],
-                "screenshots": [{
-                        "src": "/meta/screenshots/screen1.jpg",
-                        "sizes": "1280x1966",
-                        "type": "image/jpeg"
-                    },
-                    {
-                        "src": "/meta/screenshots/screen2.jpg",
-                        "sizes": "1280x1966",
-                        "type": "image/jpeg"
-                    },
-                    {
-                        "src": "/meta/screenshots/screen3.jpg",
-                        "sizes": "1280x1966",
-                        "type": "image/jpeg"
                     }
                 ],
                 "theme_color": "#000000",
