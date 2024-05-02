@@ -12,6 +12,7 @@ body {
     font-family: Inter, sans-serif;
     color: #fff;
     background-color: #000;
+    overscroll-behavior-y: none;
 }
 
 *,
