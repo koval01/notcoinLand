@@ -19,7 +19,7 @@
     "vite-plugin-pwa": "^0.20.0"
   },
   "dependencies": {
-    "cssnano": "^6.1.2",
+    "cssnano": "^7.0.1",
     "dotenv": "^16.4.4",
     "sass": "^1.76.0",
     "svelte-parallax": "^0.6.0",
