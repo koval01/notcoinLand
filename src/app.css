@@ -137,6 +137,26 @@ button {
     }
 }
 
+.item-levitaion {
+    position: relative;
+    bottom: 0;
+    animation: ItemLevitation 2s cubic-bezier(.5, .3, .4, .9) infinite;
+}
+
+@keyframes ItemLevitation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translate3d(0, -20px, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
