@@ -14,7 +14,7 @@
     }
 </script>
 
-<div class="mt-96">
+<div class="m-auto">
     <Text progress={progress} />
     <Coin progress={progress} />
 </div>
