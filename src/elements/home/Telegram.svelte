@@ -10,7 +10,7 @@
     export let progress: number, post: string;
 </script>
 
-<div class="w-full px-8 mt-5" style="opacity: {Math.pow(progress, 16)}">
+<div class="w-full px-8 mt-5" style="opacity: {Math.pow(progress + .3, 16)}">
     <script 
         async 
         src="https://telegram.org/js/telegram-widget.js?22" 

@@ -11,19 +11,19 @@
             return dropOpacity(progress);
         }
 
-        const clampedProgress = Math.min(progress, .85);
-        const smoothTransition = clampedProgress / .85;
+        const clampedProgress = Math.min(progress, .9);
+        const smoothTransition = clampedProgress / .9;
 
         return Math.pow(smoothTransition, 16);
     }
 
     const calculateScale = (progress: number): number => {
-        return Math.pow(progress * 1.45, 2);
+        return Math.pow(progress * 1.3, 2);
     }
 
     $: {
         if (!head) {
-            scale = Math.pow(progress * 1, 2);
+            scale = Math.pow(progress * 1.5, 2);
             opacity = progress >= .9 && drop ? dropOpacity(progress) : Math.pow(progress, 8) + .3;
         } else {
             scale = calculateScale(progress);
