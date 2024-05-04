@@ -1,5 +1,5 @@
 <script lang="ts">
-    const coinProgress = (progress, steps = 128) => {
+    const coinProgress = (progress, steps = 45) => {
         const step = Math.floor(progress * steps);
         const clampedStep = Math.max(0, Math.min(steps - 1, step));
         return clampedStep;
