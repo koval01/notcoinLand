@@ -3,11 +3,11 @@
     let scale: number, opacity: number;
 
     const dropOpacity = (progress: number): number => {
-        return 1 - Math.pow(progress, 20);
+        return .9 - Math.pow(progress, 24);
     }
 
     const calculateOpacity = (progress: number): number => {
-        if (progress >= .95) {
+        if (progress >= .9) {
             return dropOpacity(progress);
         }
 
@@ -24,7 +24,7 @@
     $: {
         if (!head) {
             scale = Math.pow(progress * 1, 2);
-            opacity = progress >= .95 ? dropOpacity(progress) : Math.pow(progress, 8) + .3;
+            opacity = progress >= .9 ? dropOpacity(progress) : Math.pow(progress, 8) + .3;
         } else {
             scale = calculateScale(progress);
             opacity = calculateOpacity(progress);
