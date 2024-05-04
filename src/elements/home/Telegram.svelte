@@ -1,16 +1,27 @@
 <script lang="ts">
     import NotButton from "../misc/NotButton.svelte";
 
+    import { dropOpacity } from "./misc";
+
     const handleJoin = () => {
         window.open(`https://t.me/${post.split("/")[0]}`, "_blank");
 
         (document.activeElement as HTMLElement).blur();
     };
 
+    $: {
+        if (progress >= .9) {
+            opacity = dropOpacity(progress);
+        } else {
+            opacity = Math.pow(progress + .3, 16);
+        }
+    }
+
+    let opacity: number;
     export let progress: number, post: string;
 </script>
 
-<div class="relative z-10 block px-8 mt-5" style="opacity: {Math.pow(progress + .3, 16)}">
+<div class="relative z-10 block px-8 mt-5" style="opacity: {opacity}">
     <div class="w-full">
         <script 
             async 

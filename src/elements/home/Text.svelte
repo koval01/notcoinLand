@@ -2,9 +2,7 @@
     export let progress: number, text: string, head: boolean = false, align: boolean = false, drop: boolean = true;
     let scale: number, opacity: number;
 
-    const dropOpacity = (progress: number): number => {
-        return .9 - Math.pow(progress, 24);
-    }
+    import { dropOpacity } from "./misc";
 
     const calculateOpacity = (progress: number): number => {
         if (progress >= .9 && drop) {
