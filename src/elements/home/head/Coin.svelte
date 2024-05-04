@@ -9,11 +9,15 @@
         return progress >= .8 ? 1 - (progress - .8) / .1 : 1
     }
 
-    export let progress: number;
+    $: {
+        image = `/images/coin/${coinProgress(progress)}.webp`
+    }
+
+    export let progress: number, image: string;
 </script>
 
 <img 
     class="m-auto w-28 max-w-[260px] md:w-48 transition-all" 
     style="scale: {Math.pow(progress * 2.5, 5)}; opacity: {scaleDown(progress)}" 
-    src={`/images/coin/${coinProgress(progress)}.webp`} 
+    src={image} 
     alt="coin" draggable="false" />
