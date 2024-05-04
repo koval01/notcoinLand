@@ -9,6 +9,8 @@
 
     import Telegram from './Telegram.svelte';
 
+    import Punks from './Punks.svelte';
+
     let parallax: Parallax;
 </script>
 
@@ -33,6 +35,7 @@
         </StickyLayer>
         <StickyLayer offset={{ top: 5, bottom: 7.5 }} let:progress>
             <Text progress={progress} text="with 234234 sqwads and 34893859239393 people"></Text>
+            <Punks progress={progress} />
         </StickyLayer>
     </Parallax>
 </div>
