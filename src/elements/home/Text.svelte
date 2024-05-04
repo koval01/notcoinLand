@@ -3,8 +3,9 @@
     let scale: number, opacity: number;
 
     const calculateOpacity = (progress: number): number => {
-        const clampedProgress = Math.min(progress, .85);
-        return Math.pow(clampedProgress, 5);
+        const clampedProgress = Math.min(progress, .9); // обмежуємо прогрес значенням .9, щоб при наближенні до 1.0, значення не перевищувало 1
+        const smoothTransition = clampedProgress / .9; // розрахунок плавного переходу від 0 до 1
+        return Math.pow(smoothTransition, 16); // повертаємо потужність smoothTransition
     }
 
     const calculateScale = (progress: number): number => {
