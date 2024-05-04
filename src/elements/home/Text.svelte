@@ -21,7 +21,7 @@
 
 <div class="items-center text-center md:text-[.5rem] md:mb-16 md:text-lg text-base {align ? 'center' : 'mt-96 md:mt-64'}" style="scale: {scale}; opacity: {opacity}">
     <slot></slot>
-    <h2 class="font-normal text-4xl md:text-6xl mt-4 md:mt-6 max-w-[400px] md:max-w-[600px] m-auto">
+    <h2 class="font-medium text-4xl md:text-6xl mt-4 md:mt-6 max-w-[400px] md:max-w-[600px] m-auto">
         {text}
     </h2>
 </div>
