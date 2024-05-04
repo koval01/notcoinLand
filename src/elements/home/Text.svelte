@@ -2,10 +2,19 @@
     export let progress: number, text: string, head: boolean = false, align: boolean = false;
     let scale: number, opacity: number;
 
+    const dropOpacity = (progress: number): number => {
+        return 1 - Math.pow(progress, 20);
+    }
+
     const calculateOpacity = (progress: number): number => {
-        const clampedProgress = Math.min(progress, .9); // обмежуємо прогрес значенням .9, щоб при наближенні до 1.0, значення не перевищувало 1
-        const smoothTransition = clampedProgress / .9; // розрахунок плавного переходу від 0 до 1
-        return Math.pow(smoothTransition, 16); // повертаємо потужність smoothTransition
+        if (progress >= .95) {
+            return dropOpacity(progress);
+        }
+
+        const clampedProgress = Math.min(progress, .85);
+        const smoothTransition = clampedProgress / .85;
+
+        return Math.pow(smoothTransition, 16);
     }
 
     const calculateScale = (progress: number): number => {
@@ -15,7 +24,7 @@
     $: {
         if (!head) {
             scale = Math.pow(progress * 1, 2);
-            opacity = Math.pow(progress, 8) + .3;
+            opacity = progress >= .95 ? dropOpacity(progress) : Math.pow(progress, 8) + .3;
         } else {
             scale = calculateScale(progress);
             opacity = calculateOpacity(progress);
