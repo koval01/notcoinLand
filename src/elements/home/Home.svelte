@@ -17,7 +17,7 @@
 <div class="relative">
     <Stars count={4} />
 
-    <Parallax sections={7} bind:this={parallax} config={{stiffness: .2, damping: 1}}>
+    <Parallax sections={7} bind:this={parallax} config={{stiffness: 1, damping: 1}}>
         <StickyLayer offset={{ top: 0, bottom: 2.5 }} let:progress>
             <Head progress={progress} />
         </StickyLayer>
@@ -29,7 +29,7 @@
         </StickyLayer>
         <StickyLayer offset={{ top: 3.5, bottom: 6 }} let:progress>
             <Text progress={progress} text="It was become and still is the biggest crypto community in Web3" drop={false}></Text>
-            <Telegram progress={progress} post="notcoin_scam/5" />
+            <Telegram progress={progress} post="notcoin_scam/36" />
         </StickyLayer>
     </Parallax>
 </div>
