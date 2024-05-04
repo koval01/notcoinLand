@@ -1,5 +1,5 @@
 <script lang="ts">
-    export let progress: number, text: string, head: boolean = false, align: boolean = false;
+    export let progress: number, text: string, head: boolean = false, align: boolean = false, drop: boolean = true;
     let scale: number, opacity: number;
 
     const dropOpacity = (progress: number): number => {
@@ -7,7 +7,7 @@
     }
 
     const calculateOpacity = (progress: number): number => {
-        if (progress >= .9) {
+        if (progress >= .9 && drop) {
             return dropOpacity(progress);
         }
 
@@ -24,7 +24,7 @@
     $: {
         if (!head) {
             scale = Math.pow(progress * 1, 2);
-            opacity = progress >= .9 ? dropOpacity(progress) : Math.pow(progress, 8) + .3;
+            opacity = progress >= .9 && drop ? dropOpacity(progress) : Math.pow(progress, 8) + .3;
         } else {
             scale = calculateScale(progress);
             opacity = calculateOpacity(progress);
