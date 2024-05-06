@@ -21,7 +21,7 @@
     export let progress: number, post: string;
 </script>
 
-<div class="relative z-10 block px-8 mt-5" style="opacity: {opacity}">
+<div class="relative z-50 block px-8 mt-5" style="opacity: {opacity}">
     <iframe 
         class="w-full mt-2 md:mt-3" 
         src="https://t.me/{post}?embed=1&mode=tme" 
